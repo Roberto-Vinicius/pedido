@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #e8a2d9;
+  background-image: url(core.gif);
+  background-repeat: no-repeat;
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-position: center center; /* Centraliza a imagem */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Mantém o conteúdo centralizado verticalmente */
+  overflow: hidden; /* Impede as barras de rolagem */
+}
+
+.fundo {
+  background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+  backdrop-filter: blur(10px); /* Desfoque para efeito de vidro */
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+h1 {
+  color: #ff0080;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #ff0080;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.botao:hover {
+  transform: scale(1.1);
+}

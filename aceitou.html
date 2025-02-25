@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ai sim!</title>
+  <link rel="stylesheet" href="aceitou.css">
+</head>
+<body>
+  <div class="poema-container">
+    <div class="poema">
+      <h1>Soneto do Amor Total</h1>
+      <p>Amo-te tanto, meu amor... não cante</p>
+      <p>O humano coração com mais verdade...</p>
+      <p>Amo-te como amigo e como amante</p>
+      <p>Numa sempre diversa realidade</p>
+      <p>Amo-te afim, de um calmo amor prestante,</p>
+      <p>E te amo além, presente na saudade.</p>
+      <p>Amo-te, enfim, com grande liberdade</p>
+      <p>Dentro da eternidade e a cada instante.</p>
+      <p>Amo-te como um bicho, simplesmente,</p>
+      <p>De um amor sem mistério e sem virtude</p>
+      <p>Com um desejo maciço e permanente.</p>
+      <p>E de te amar assim muito e amiúde,</p>
+      <p>É que um dia em teu corpo de repente</p>
+      <p>Hei de morrer de amar mais do que pude.</p>
+    </div>
+  </div>
+  <audio id="musica" autoplay>
+    <source src="wanna.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <script>
+    // Verifica se o áudio está carregado e pronto para reprodução
+    const audio = document.getElementById('musica');
+    audio.addEventListener('canplaythrough', () => {
+      audio.play();
+    });
+  </script>
+</body>
+</html>
