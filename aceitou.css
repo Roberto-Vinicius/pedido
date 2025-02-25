@@ -27,6 +27,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  padding: 20px; /* Adiciona um pouco de espaço nas bordas */
+  box-sizing: border-box; /* Inclui o padding nas dimensões totais */
 }
 
 /* Estilo de vidro (efeito fosco) */
@@ -45,40 +47,56 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 20px; /* Adiciona margem para evitar que o conteúdo fique colado nas bordas */
+  box-sizing: border-box;
 }
 
+/* Estilo para os parágrafos do poema */
 .poema p {
   margin: 10px 0;
   font-size: 1.2rem;
 }
 
+/* Estilo do título */
 h1 {
   color: #ff0080;
-  font-size: 36px;
+  font-size: 2.5vw; /* Usar unidades relativas para o tamanho do título */
   margin-bottom: 20px;
 }
 
-.botoes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Espaçamento entre os botões */
-  margin-top: 20px;
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 5vw; /* Ajusta o tamanho do título em telas menores */
+  }
+
+  .poema {
+    padding: 20px; /* Reduz o padding para telas menores */
+  }
+
+  .botao {
+    font-size: 4vw; /* Ajusta o tamanho dos botões em telas menores */
+    padding: 8px 16px; /* Ajusta o padding dos botões */
+  }
+
+  .poema p {
+    font-size: 1rem; /* Ajusta o tamanho do texto em telas menores */
+  }
 }
 
-.botao {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 20px;
-  background-color: #ff0080;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .poema {
+    max-width: 90%; /* Aumenta a largura para dispositivos menores */
+    padding: 20px; /* Reduz o padding para melhorar o layout em telas pequenas */
+    margin: 15px; /* Ajusta a margem em telas menores */
+  }
 }
 
-.botao:hover {
-  transform: scale(1.1);
+@media (max-width: 480px) {
+  .poema {
+    max-width: 95%; /* Aumenta ainda mais a largura em telas muito pequenas */
+    padding: 15px; /* Ajusta o padding para telas muito pequenas */
+    margin: 10px; /* Ajusta a margem para telas muito pequenas */
+  }
 }

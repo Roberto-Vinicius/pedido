@@ -2,22 +2,21 @@ const simButton = document.getElementById('sim');
 const naoButton = document.getElementById('nao');
 const container = document.querySelector('.container'); // Pegando a div centralizada
 
-// Função para mover o botão "Não" aleatoriamente dentro da tela
+// Função para mover o botão "Não" aleatoriamente dentro da tela visível
 function moverBotaoNao() {
-  const containerRect = container.getBoundingClientRect(); // Pega os limites da div centralizada
-  const maxX = window.innerWidth - naoButton.offsetWidth;
-  const maxY = window.innerHeight - naoButton.offsetHeight;
+  // Calcula os limites da tela
+  const maxX = window.innerWidth - naoButton.offsetWidth;  // Limite de X (largura da tela menos a largura do botão)
+  const maxY = window.innerHeight - naoButton.offsetHeight; // Limite de Y (altura da tela menos a altura do botão)
 
-  let newX, newY;
+  // Gera novas coordenadas aleatórias dentro dos limites da tela
+  let newX = Math.floor(Math.random() * maxX);
+  let newY = Math.floor(Math.random() * maxY);
 
-  do {
-    newX = Math.floor(Math.random() * maxX);
-    newY = Math.floor(Math.random() * maxY);
-  } while (
-    newX > containerRect.left - 50 && newX < containerRect.right + 50 &&
-    newY > containerRect.top - 50 && newY < containerRect.bottom + 50
-  ); 
+  // Garante que o botão fique dentro da área visível, considerando overflow: visible
+  newX = Math.min(Math.max(newX, 0), maxX);
+  newY = Math.min(Math.max(newY, 0), maxY);
 
+  // Define a posição do botão "Não"
   naoButton.style.position = "absolute";
   naoButton.style.left = `${newX}px`;
   naoButton.style.top = `${newY}px`;
@@ -25,11 +24,8 @@ function moverBotaoNao() {
 
 // Evento para botão "Sim" (redireciona para outra página)
 simButton.addEventListener('click', () => {
-
   window.location.href = "aceitou.html"; // Redireciona para a página
-
 });
-
 
 // Evento para mover o botão "Não" ao passar o mouse perto
 document.addEventListener('mousemove', (e) => {
